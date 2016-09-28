@@ -17,13 +17,15 @@ const greatPlaceStyle = {
   fontSize: 16,
   fontWeight: 'bold',
   padding: 4,
-  cursor: 'pointer'
+  cursor: 'pointer',
+  display: 'none'
 };
 
 const greatPlaceStyleHover = {
   ...greatPlaceStyle,
   border: '5px solid #3f51b5',
-  color: '#f44336'
+  color: '#f44336',
+  display: 'block'
 };
 
 import React, {PropTypes, Component} from 'react';
@@ -40,9 +42,14 @@ export default class Marker extends Component {
     const style = this.props.$hover ? greatPlaceStyleHover : greatPlaceStyle;
 
      return (
+       <div style={greatPlaceStyleHover}>
         <div style={style}>
-           {this.props.text}
+           video popup without proper styles
         </div>
+        <div>
+          permanent placeholder without styles
+        </div>
+      </div>
      );
  }
 }
