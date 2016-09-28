@@ -13,7 +13,7 @@ export default class Map extends Component {
 
   render() {
     return (
-       <GoogleMap
+      <GoogleMap
         bootstrapURLKeys={{key: 'AIzaSyDp6OGS8beEflySUYkEFLQ1iT2_QwaVl8I'}}
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
