@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Map from './components/map';
+import Marker from './components/marker'
+
 import VideoTable from './components/video_table';
 import InfoSection from './components/info_section';
 import '../public/css/index.css';
-
 
 var ATHLETE_DATA = [
   {id: 1 ,name: "John Malone", city: "Chicago", photo: "http://s3.amazonaws.com/rms-rmfiles-production/client_photos/athlete_1093859_original.jpg", thumbnail_url: "https://d1vv3r1s83df1b.cloudfront.net/02a966f0-f8f2-0133-b653-0242ac110003/193289-mp4-00002.png", video_url: "https://d1vv3r1s83df1b.cloudfront.net/02a966f0-f8f2-0133-b653-0242ac110003/317111_GW_MaloneJohn_converted_H264.webm"},
@@ -43,8 +44,10 @@ var ATHLETE_DATA = [
   {id: 34 ,name:"Ariana Ruffin", city: "Philadelphia ", photo: "http://s3.amazonaws.com/rms-rmfiles-production/client_photos/athlete_557097_original.jpg", thumbnail_url: "https://d1vv3r1s83df1b.cloudfront.net/0e37ab30-2d83-0133-951e-005056b8330b/166433-mp4-00002.png", video_url: "https://d1vv3r1s83df1b.cloudfront.net/0e37ab30-2d83-0133-951e-005056b8330b/275891_1_RuffinAriana.webm"}
 ]
 
+const markers = [<Marker lat={41.881832} lng={-87.623177} text={"Chicago"} />, <Marker lat={39.9526} lng={-75.1652} text={"Philadelphia"} />]
+
 ReactDOM.render(
-  <Map />,
+  <Map markers={markers}/>,
   document.getElementById('map')
 );
 

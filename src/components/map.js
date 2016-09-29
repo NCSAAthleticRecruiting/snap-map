@@ -11,7 +11,10 @@ export default class Map extends Component {
     zoom: 9,
   };
 
+
   render() {
+    const markers = [<Marker lat={41.881832} lng={-87.623177} text={"Chicago"} />, <Marker lat={39.9526} lng={-75.1652} text={"Philadelphia"} />]
+
     return (
       <GoogleMap
         bootstrapURLKeys={{key: 'AIzaSyDp6OGS8beEflySUYkEFLQ1iT2_QwaVl8I'}}
@@ -19,8 +22,9 @@ export default class Map extends Component {
         defaultZoom={this.props.zoom}
         onChange={this.props.onChange}
         onClick={this.props.onClick}>
-        <Marker lat={41.881832} lng={-87.623177} text={"Chicago"} />
-        <Marker lat={39.9526} lng={-75.1652} text={"Philadelphia"} />
+        {
+          this.props.markers
+        }
       </GoogleMap>
     );
   }
