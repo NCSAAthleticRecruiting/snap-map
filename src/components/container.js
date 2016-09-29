@@ -19,17 +19,14 @@ export default class Container extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      url: "www.example.com"
     };
   }
 
-  openModal() {
+  openModal(url) {
     this.setState({modalIsOpen: true});
-  }
-
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.refs.subtitle.style.color = '#f00';
+    this.setState({url: url})
   }
 
   closeModal() {
@@ -40,16 +37,15 @@ export default class Container extends Component {
     return (
       <div>
         <div>
-          <button onClick={this.openModal.bind(this)}>Open Modal</button>
           <Modal
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
             onRequestClose={this.closeModal}
             style={customStyles} >
-
+            <iframe src='http://www.youtube.com'>WATNESS</iframe>
 
             <button onClick={this.closeModal.bind(this)}>close</button>
-            <iframe src="http://www.w3schools.com"></iframe>
+
           </Modal>
         </div>
 
@@ -57,7 +53,11 @@ export default class Container extends Component {
           <Map markers={this.props.markers}/>
         </div>
         <div id='vtable'>
-          <VideoTable athlete_data={this.props.athlete_data.chicago} />
+
+          <VideoTable thumbnails={this.props.athlete_data.chicago.map((athlete, i) => {
+              return <li key={i} onClick={this.openModal.bind(this)}>
+                        <img src={athlete["thumbnail_url"]} alt={athlete["name"]} />
+                      </li>})}  />
         </div>
         <div id='info_section'>
           <InfoSection athlete_data={this.props.athlete_data.chicago} />
