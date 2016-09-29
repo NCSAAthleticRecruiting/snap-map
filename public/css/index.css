@@ -8,7 +8,7 @@ body {
 
 #map {
   height: 600px;
-  width: 50%;
+  width: 75%;
   display: inline-block;
 }
 
@@ -16,7 +16,7 @@ body {
   display: inline-block;
   max-height: 600px;
   overflow: hidden;
-  width: 50%;
+  width: 25%;
   float: right;
 }
 
@@ -31,6 +31,15 @@ li {
 #vtable li {
   max-height: 108px;
   overflow: hidden;
+}
+#vtable li:before {
+  opacity:0;
+  width:100%;
+  height:100%;
+  background-color:#333;
+}
+#vtable li:before:hover {
+  opacity:1;
 }
 span {
   display:inline-block;
@@ -52,6 +61,7 @@ span {
    display: inline-block;
    position:absolute;
    top:45%;
+   color: #9095a2;
 }
 
 #info_section:after {
@@ -61,6 +71,7 @@ span {
    position:absolute;
    right:20px;
    top:45%;
+   color: #9095a2;
 }
 
 #info_section li {
@@ -69,8 +80,4 @@ span {
 
 #info_section img {
   max-height: 100px;
-}
-#athlete_info_id-3, #athlete_info_id-5, #athlete_info_id-6, #athlete_info_id-7, #athlete_info_id-8,
-#athlete_info_id-13, #athlete_info_id-14, #athlete_info_id-15, #athlete_info_id-17 {
-  display:none;
 }
