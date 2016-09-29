@@ -7,7 +7,6 @@ export default class ClientInfoRenderer extends Component {
   render() {
     const clientInfoStyle = {
     }
-    console.log(this.props.athlete_data)
    return (
      <ul>
        {this.props.athlete_data.map(function(athlete){
