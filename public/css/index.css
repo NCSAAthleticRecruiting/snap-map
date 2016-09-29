@@ -7,14 +7,14 @@ body {
 }
 
 #map {
-  height: 600px;
+  height: 800px;
   width: 75%;
   display: inline-block;
 }
 
 #vtable {
   display: inline-block;
-  max-height: 600px;
+  max-height: 800px;
   overflow: hidden;
   width: 25%;
   float: right;
