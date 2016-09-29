@@ -8,23 +8,27 @@ const greatPlaceStyle = {
   height: K_SIZE,
   left: -K_SIZE / 2,
   top: -K_SIZE / 2,
-
-  border: '5px solid #f44336',
-  borderRadius: K_SIZE,
-  backgroundColor: 'white',
   textAlign: 'center',
-  color: '#3f51b5',
+  color: '#3a3f4f',
   fontSize: 16,
   fontWeight: 'bold',
-  padding: 4,
   cursor: 'pointer',
-  display: 'none'
+  display: 'none',
+  width: '30px',
+  height: '30px',
+  borderRadius: '50% 50% 50% 0',
+  background: '#ff6900',
+  transform: [
+        { rotate: '45deg'},],
+  left: '50%',
+  top: '50%',
+  margin: '-20px 0 0 -20px'
+
 };
 
 const greatPlaceStyleHover = {
   ...greatPlaceStyle,
-  border: '5px solid #3f51b5',
-  color: '#f44336',
+  color: '#3a3f4f',
   display: 'block'
 };
 
@@ -44,10 +48,10 @@ export default class Marker extends Component {
      return (
        <div style={greatPlaceStyleHover}>
         <div style={style}>
-           video popup without proper styles
+           Video
         </div>
         <div>
-          permanent placeholder without styles
+          Permanent
         </div>
       </div>
      );

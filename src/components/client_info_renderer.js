@@ -9,8 +9,8 @@ export default class ClientInfoRenderer extends Component {
      <ul>
        {this.props.athlete_data.map(function(athlete){
           return <li key={"athlete_info_id-" + athlete["id"]} >
-            <img src={athlete["photo"]} alt={athlete["name"]} />
-            <span>{athlete["name"]}</span>
+            <span><img src={athlete["photo"]} alt={athlete["name"]} /></span>
+            <b>{athlete["name"]}</b>
           </li>;
        })}
      </ul>
