@@ -1,3 +1,5 @@
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+
 body {
   margin: 0;
   padding: 0;
@@ -5,6 +7,41 @@ body {
 }
 
 .app-container {
-  height: 800px;
-  width: 1440px;
+  height: 600px;
+  width: 50%;
+  display: inline-block;
+}
+
+#vtable {
+  display: inline-block;
+  max-height: 600px;
+  overflow: hidden;
+  width:50%;
+  float:right;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  float: left;
+}
+
+#vtable li {
+  max-height:108px;
+  overflow:hidden;
+}
+
+#info_section {
+
+}
+
+#info_section img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+#info-section span {
+
 }
