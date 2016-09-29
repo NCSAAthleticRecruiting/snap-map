@@ -17,15 +17,8 @@ const markerStyle = {
   fontSize: 16,
   fontWeight: 'bold',
   padding: 4,
-  cursor: 'pointer',
-  display: 'none'
-};
+  cursor: 'pointer'
 
-const markerStyleHover = {
-  ...markerStyle,
-  border: '5px solid #3f51b5',
-  color: '#f44336',
-  display: 'block'
 };
 
 import React, {PropTypes, Component} from 'react';
@@ -39,17 +32,10 @@ export default class Marker extends Component {
   static defaultProps = {};
 
   render() {
-    const style = this.props.$hover ? markerStyleHover : markerStyle;
-
      return (
-       <div style={markerStyleHover}>
-        <div style={style}>
-          {this.props.text}!
-        </div>
-        <div>
+        <div style={markerStyle}>
           {this.props.text}
         </div>
-      </div>
      );
  }
 }
