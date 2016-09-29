@@ -11,9 +11,9 @@ export default class ClientInfoRenderer extends Component {
    return (
      <ul>
        {this.props.athlete_data.map(function(athlete){
-          return <li>
+          return <li id={"athlete_info_id-" + athlete["id"]} >
             <img src={athlete["photo"]} alt={athlete["name"]} />
-            <span>athlete["name"]</span>
+            <span>{athlete["name"]}</span>
           </li>;
        })}
      </ul>

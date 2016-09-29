@@ -10,7 +10,7 @@ export default class ThumbnailRenderer extends Component {
    return (
      <ul>
        {this.props.athlete_data.map(function(athlete){
-          return <li>
+          return <li id={"athlete_video_id-" + athlete["id"]}>
             <img src={athlete["thumbnail_url"]} alt={athlete["name"]} />
           </li>;
        })}
