@@ -42,7 +42,7 @@ export default class Container extends Component {
             onAfterOpen={this.afterOpenModal}
             onRequestClose={this.closeModal}
             style={customStyles} >
-            <iframe src='http://www.youtube.com'>WATNESS</iframe>
+            <iframe src={this.state.url}></iframe>
 
             <button onClick={this.closeModal.bind(this)}>close</button>
 
@@ -55,7 +55,7 @@ export default class Container extends Component {
         <div id='vtable'>
 
           <VideoTable thumbnails={this.props.athlete_data.chicago.map((athlete, i) => {
-              return <li key={i} onClick={this.openModal.bind(this)}>
+              return <li key={i} onClick={this.openModal.bind(this, athlete["video_url"])}>
                         <img src={athlete["thumbnail_url"]} alt={athlete["name"]} />
                       </li>})}  />
         </div>
