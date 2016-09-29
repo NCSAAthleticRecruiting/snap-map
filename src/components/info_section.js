@@ -1,4 +1,5 @@
 import React, {PropTypes, Component} from 'react';
+import ClientInfoRenderer from './client_info_renderer';
 export default class InfoSection extends Component {
   static propTypes = {
     text: PropTypes.string
@@ -9,7 +10,7 @@ export default class InfoSection extends Component {
     }
    return (
       <div style={infoStyle}>
-        //  user photos will be rendered in here....somehow
+        <ClientInfoRenderer athlete_data={this.props.athlete_data} />
       </div>
    );
  }

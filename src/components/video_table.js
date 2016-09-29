@@ -1,4 +1,5 @@
 import React, {PropTypes, Component} from 'react';
+import ThumbnailRenderer from './thumbnail_renderer';
 export default class VideoTable extends Component {
   static propTypes = {
     text: PropTypes.string
@@ -6,10 +7,11 @@ export default class VideoTable extends Component {
 
   render() {
     const tableStyle = {
+      display: 'block'
     }
    return (
       <div style={tableStyle}>
-        //  videos will be rendered in here....somehow
+        <ThumbnailRenderer athlete_data={this.props.athlete_data} />
       </div>
    );
  }
