@@ -1,4 +1,5 @@
 import React, {PropTypes, Component} from 'react';
+import Modal from 'react-modal';
 export default class ThumbnailRenderer extends Component {
   static propTypes = {
     list: PropTypes.object
