@@ -16,10 +16,8 @@ const greatPlaceStyle = {
   display: 'none',
   width: '30px',
   height: '30px',
-  borderRadius: '50% 50% 50% 0',
+  borderRadius: '50%',
   background: '#ff6900',
-  transform: [
-        { rotate: '45deg'},],
   left: '50%',
   top: '50%',
   margin: '-20px 0 0 -20px'
