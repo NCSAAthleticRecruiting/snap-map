@@ -1,6 +1,6 @@
 const K_SIZE = 40;
 
-const greatPlaceStyle = {
+const markerStyle = {
 // initially any map object has left top corner at lat lng coordinates
 // it's on you to set object origin to 0,0 coordinates
   position: 'absolute',
@@ -8,25 +8,23 @@ const greatPlaceStyle = {
   height: K_SIZE,
   left: -K_SIZE / 2,
   top: -K_SIZE / 2,
+
+  border: '5px solid #f44336',
+  borderRadius: K_SIZE,
+  backgroundColor: 'white',
   textAlign: 'center',
-  color: '#3a3f4f',
+  color: '#3f51b5',
   fontSize: 16,
   fontWeight: 'bold',
+  padding: 4,
   cursor: 'pointer',
-  display: 'none',
-  width: '30px',
-  height: '30px',
-  borderRadius: '50%',
-  background: '#ff6900',
-  left: '50%',
-  top: '50%',
-  margin: '-20px 0 0 -20px'
-
+  display: 'none'
 };
 
-const greatPlaceStyleHover = {
-  ...greatPlaceStyle,
-  color: '#3a3f4f',
+const markerStyleHover = {
+  ...markerStyle,
+  border: '5px solid #3f51b5',
+  color: '#f44336',
   display: 'block'
 };
 
@@ -41,15 +39,15 @@ export default class Marker extends Component {
   static defaultProps = {};
 
   render() {
-    const style = this.props.$hover ? greatPlaceStyleHover : greatPlaceStyle;
+    const style = this.props.$hover ? markerStyleHover : markerStyle;
 
      return (
-       <div style={greatPlaceStyleHover}>
+       <div style={markerStyleHover}>
         <div style={style}>
-           Video
+          {this.props.text}!
         </div>
         <div>
-          Permanent
+          {this.props.text}
         </div>
       </div>
      );
