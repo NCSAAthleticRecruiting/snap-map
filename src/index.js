@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Map from './components/map';
-import Marker from './components/marker'
-
-import VideoTable from './components/video_table';
-import InfoSection from './components/info_section';
+import Marker from './components/marker';
+import Container from './components/container';
 import '../public/css/index.css';
 
 var ATHLETE_DATA = [
@@ -47,16 +44,6 @@ var ATHLETE_DATA = [
 const markers = [<Marker lat={41.881832} lng={-87.623177} text={"Chicago"} />, <Marker lat={39.9526} lng={-75.1652} text={"Philadelphia"} />]
 
 ReactDOM.render(
-  <Map markers={markers}/>,
-  document.getElementById('map')
-);
-
-ReactDOM.render(
-  <VideoTable athlete_data={ATHLETE_DATA} />,
-  document.getElementById('vtable')
-);
-
-ReactDOM.render(
-  <InfoSection athlete_data={ATHLETE_DATA} />,
-  document.getElementById('info_section')
+  <Container markers={markers} athlete_data={ATHLETE_DATA}/>,
+  document.getElementById('container')
 );
