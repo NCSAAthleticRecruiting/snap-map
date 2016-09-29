@@ -164,6 +164,34 @@ b {
   max-height: 160px;
 }
 
+.ReactModal__Content--after-open {
+  border:none !important;
+  top:25% !important;
+  border-radius:0 !important;
+  background-color:#000 !important;
+}
+
+.ReactModal__Overlay--after-open {
+  background-color:rgba(0, 0, 0, 0.6) !important;
+}
+
+.ReactModalPortal {
+  position:relative;
+}
+
+.ReactModalPortal iframe {
+  margin:100px;
+  border:none;
+}
+
+.ReactModalPortal button {
+  background-color:#000;
+  border:none;
+  position:absolute;
+  right:10px;
+  top:10px;
+  color:#999 !important;
+}
 
 
 

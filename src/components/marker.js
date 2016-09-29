@@ -9,23 +9,21 @@ const markerStyle = {
   left: -K_SIZE / 2,
   top: -K_SIZE / 2,
 
-  border: '5px solid #f44336',
+  border: '5px solid #ff6900',
   borderRadius: K_SIZE,
-  backgroundColor: 'white',
+  backgroundColor: '#ff6900',
   textAlign: 'center',
-  color: '#3f51b5',
+  color: '#000',
   fontSize: 16,
   fontWeight: 'bold',
   padding: 4,
   cursor: 'pointer'
-
 };
 
 import React, {PropTypes, Component} from 'react';
 
 export default class Marker extends Component {
   static propTypes = {
-    $hover: PropTypes.bool,
     text: PropTypes.string
   };
 
