@@ -56,7 +56,7 @@ export default class Container extends Component {
 
           <VideoTable thumbnails={this.props.athlete_data.chicago.map((athlete, i) => {
               return <li key={i} onClick={this.openModal.bind(this, athlete["video_url"])}>
-                        <img src={athlete["thumbnail_url"]} alt={athlete["name"]} />
+                        <span><img src={athlete["thumbnail_url"]} alt={athlete["name"]} /></span>
                       </li>})}  />
         </div>
         <div id='info_section'>
