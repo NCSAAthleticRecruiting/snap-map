@@ -51,13 +51,13 @@ export default class Root extends Component {
   }
 
   setCityAndData(city){
-    this.setState({city: city});
-    this.setState({athlete_data: city === 'chicago' ? ATHLETE_DATA["chicago"] : ATHLETE_DATA.philadelphia})
+    console.log("I am here")
+    this.setState({city: city, athlete_data: this.state.city == 'chicago' ? ATHLETE_DATA["chicago"] : ATHLETE_DATA["philadelphia"]});
   }
 
   render() {
-    const markers = [<Marker lat={41.881832} lng={-87.623177} text={"Chicago"} key='{1}' onClick={()=> this.setCityAndData('chicago') } />, <Marker lat={39.9526} lng={-75.1652} text={"Philadelphia"} key='{2}'  onClick={() => this.setCityAndData('philadelphia')} />]
-    
+    const markers = [<Marker lat={41.881832} lng={-87.623177} text={"Chicago"} key='{1}' onClick={this.setCityAndData.bind(this, 'chicago')} />, <Marker lat={39.9526} lng={-75.1652} text={"Philadelphia"} key='{2}'  onClick={this.setCityAndData.bind(this, 'philadelphia')} />]
+
     return (
     <Container markers={markers} athlete_data={this.state.athlete_data} />
   )};

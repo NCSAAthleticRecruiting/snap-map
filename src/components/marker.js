@@ -31,7 +31,7 @@ export default class Marker extends Component {
 
   render() {
      return (
-        <div style={markerStyle}>
+        <div style={markerStyle} onClick={this.props.onClick} >
           {this.props.text}
         </div>
      );

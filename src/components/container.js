@@ -20,14 +20,12 @@ export default class Container extends Component {
     super(props);
     this.state = {
       modalIsOpen: false,
-      url: "www.ncsasports.org",
-      list: this.props.athlete_data
+      url: "www.ncsasports.org"
     };
   }
 
   openModal(url) {
-    this.setState({modalIsOpen: true});
-    this.setState({url: url})
+    this.setState({modalIsOpen: true, url: url});
   }
 
   closeModal() {
@@ -35,8 +33,6 @@ export default class Container extends Component {
   }
 
   render() {
-
-    console.log(this.props)
     return (
       <div>
         <div>
@@ -57,13 +53,13 @@ export default class Container extends Component {
         </div>
         <div id='vtable'>
 
-          <VideoTable thumbnails={this.state.list.map((athlete, i) => {
+          <VideoTable thumbnails={ this.props.athlete_data.map((athlete, i) => {
               return <li key={i} onClick={this.openModal.bind(this, athlete["video_url"])}>
                         <span><img src={athlete["thumbnail_url"]} alt={athlete["name"]} /></span>
                       </li>})}  />
         </div>
         <div id='info_section'>
-          <InfoSection athlete_data={this.state.list} />
+          <InfoSection athlete_data={ this.props.athlete_data } />
         </div>
       </div>
     );
